@@ -1,0 +1,120 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  background-color: #f0f0f0;
+  opacity: 1;
+}
+
+#game {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #fff;
+  padding: 2vh;
+  border-radius: 10px;
+  width: 90vw;
+}
+
+#board {
+  display: grid;
+  grid-template-columns: repeat(5, 7vh);
+  grid-gap: 5vh;
+  justify-items: center;
+  height: 70vh;
+}
+
+.tile {
+  width: 7vh;
+  height: 7vh;
+  /* line-height matches height for vertical centering */
+  line-height: 7vh;
+  text-align: center;
+  font-size: 1.8vh;
+  font-weight: bold;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: #e0e0e0;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+@media (min-width: 340px) and (max-width: 500px) and (min-height: 650px) and (max-height: 950px) {
+  .tile {
+    width: 4vw;
+    height: 4vw;
+    line-height: 4vw;
+    font-size: 1.1vw;
+  }
+
+  #board {
+    --col: 5;
+    grid-template-columns: repeat(var(--col), 4vw);
+    grid-template-rows: repeat(6, 4vw);
+    row-gap: 25px;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 1400px) and (min-height: 650px) and (max-height: 1050px) {
+  .tile {
+    width: 4vw;
+    height: 4vw;
+    line-height: 4vw;
+    font-size: 1.1vw;
+  }
+
+  #board {
+    --col: 5;
+    grid-template-columns: repeat(var(--col), 4vw);
+    grid-template-rows: repeat(6, 4vw);
+    grid-gap: 0;
+  }
+}
+
+.correct {
+  background-color: #6aaa64 !important;
+  color: white !important;
+}
+
+.present {
+  background-color: #c9b458 !important;
+  color: white !important;
+}
+
+.absent {
+  background-color: #787c7e !important;
+  color: white !important;
+}
+
+#guess-input {
+  margin-top: 1vh;
+  padding: 1vh;
+  width: 200px;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #9f9f9f;
+  color: white;
+}
+
+button:hover {
+  background-color: #727272;
+}
+
+#message {
+  margin: 10px;
+}
